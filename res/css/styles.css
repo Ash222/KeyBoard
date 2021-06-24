@@ -5,3 +5,62 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: #111;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    /* remove background-color */
+    background-color: lightblue;
+    margin: auto;
+    padding: 2rem 1rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    /* remove background-color */
+    background-color: tomato;
+    justify-content: space-between;
+    padding: 0.7rem;
+}
+
+.key {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    /* remove this bg-color */
+    background-color: lightgreen;
+    border: 2px solid black;
+    flex-basis: 80px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 800;
+    font-size: 22px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ####################### UnderScore ###################### */
+.underscore {
+    position: static;
+    color: rgba(240, 248, 255, 0);
+}
+
+/* Why is it that even though underscore is positioned it's ::before , it is translating wrt to body or root? And this is not the first time I'm noticing this behaviour.  */
+
+.underscore::before {
+    content: "";
+    height: 1px;
+    width: 16px;
+    position: absolute;
+    top: 66px;
+    right: 20.5rem;
+    border: 0.12448rem solid white;
+}
+
+/* ##################### UnderScore End ###################### */
