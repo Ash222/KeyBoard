@@ -1,2 +1,2 @@
 # KeyBoard
-It is a fun little project , which displays my keyboard layout , using pure css.
+It is a fun little project , which displays simple keyboard layout , using pure css.
