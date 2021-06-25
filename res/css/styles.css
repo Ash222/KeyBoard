@@ -7,22 +7,38 @@
 }
 
 body {
-    background-color: #111;
+    background: rgb(160, 161, 160);
+}
+
+h1 {
+    padding: 2rem;
+    color: rgba(35, 35, 36, 0.863);
+    text-align: center;
+}
+
+.keyboard {
+    background-color: rgba(61, 62, 63, 0.959);
+    margin: auto 1rem;
+    border: 3px solid black;
+    border-radius: 10px;
 }
 
 .container {
+    display: grid;
+    grid-template-columns: auto 22%;
+    margin: auto;
+    padding: 18px 10px;
+    user-select: none;
+}
+
+.col-container {
     display: flex;
     flex-direction: column;
-    width: 80%;
-    background-color: lightblue;
-    margin: auto;
-    padding: 2rem 1rem;
 }
 
 .row {
     display: flex;
     flex-direction: row;
-    background-color: rgb(95, 94, 94);
     justify-content: space-between;
     padding: 0.7rem;
 }
@@ -41,7 +57,12 @@ body {
     font-size: 22px;
     align-items: center;
     justify-content: center;
-    box-shadow: 3px 3px 8px red;
+    box-shadow: 3px 3px 6px red,
+        inset 6px 8px 3px rgba(27, 27, 27, 0.74);
+}
+
+.key:hover {
+    box-shadow: 3px 8px 14px red;
 }
 
 .key-border {
@@ -66,6 +87,9 @@ body {
 
 /* ##################### UnderScore End ###################### */
 
+
+/* ==================== Special Keys ======================= */
+
 .special {
     display: flex;
     flex-direction: row;
@@ -74,8 +98,99 @@ body {
 
 .spacebar {
     flex-basis: 550px;
+    position: relative;
+}
+
+.spacebar::before {
+    content: "";
+    width: 60%;
+    height: 2px;
+    position: absolute;
+    top: 70%;
+    background: red;
 }
 
 .lshift {
     flex-basis: 150px;
+}
+
+.rctrl {
+    flex-basis: 114px;
+}
+
+.num-lower-container {
+    position: relative;
+}
+
+.num-lower-container .row {
+    position: absolute;
+    left: -15px;
+    width: 100%;
+}
+
+.num-0,
+.num-dot {
+    position: absolute;
+    left: 120px;
+    width: 90px;
+}
+
+.num-dot {
+    left: 228px;
+}
+
+.num-enter-container {
+    position: relative;
+}
+
+.num-2,
+.num-3,
+.num-enter {
+    position: absolute;
+    left: 111px;
+    min-width: 90px;
+}
+
+.num-3 {
+    left: 213px;
+}
+
+.num-enter {
+    min-height: 174px;
+    left: 313px;
+}
+
+.w {
+    position: relative;
+}
+
+.w::before {
+    content: "";
+    background: rgb(0, 0, 0);
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    border-radius: 50%;
+    border: 2px solid black;
+    box-shadow: 1px 1.7px 1.2px rgba(153, 147, 147, 0.931);
+    transform: translateX(-50%);
+}
+
+.dash {
+    position: relative;
+}
+
+.dash::before {
+    content: "";
+    background: red;
+    height: 2px;
+    width: 12px;
+    position: absolute;
+    top: 79%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 0.3px solid rgb(209, 22, 22);
+    box-shadow: 3px 2px 12px rgba(134, 55, 55, 0.603);
 }
